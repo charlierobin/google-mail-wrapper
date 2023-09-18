@@ -16,9 +16,13 @@ This preferences just contains the position and size of the app window, so you d
 
 All the DesktopHTMLViewer files, ie: cookies, cached HTML/Javascript/CSS/other web content like images etc, are saved in the following directories:
 
+
 `~/Library/Caches/com.charlierobin.gmail`
+
 `~/Library/Cookies/com.charlierobin.gmail.binarycookies`
+
 `~/Library/WebKit/com.charlierobin.gmail`
+
 
 There’s also a standard Apple `Saved Application State` file written:
 
