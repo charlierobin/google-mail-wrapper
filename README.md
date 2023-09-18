@@ -38,9 +38,13 @@ If you want to run multiple copies of the app, each handling a different GMail a
 
 In other words, to be able to simulataneously work with gmail_account_1@gmail.com, gmail_account_2@gmail.com and gmail_account_3@gmail.com, you need three wrapper apps:
 
+
 GMail 1 (with bundle id of, say: com.mydomain.gmail.account1)
+
 GMail 2 (with bundle id of, say: com.mydomain.gmail.account2)
+
 GMail 3 (with bundle id of, say: com.mydomain.gmail.account3)
+
 
 (But it doesn't really matter what the app names and bundle IDs are, as long as they are unique.)
 
@@ -49,4 +53,10 @@ This is a screenshot of all the files/directories that the app creates. (As you 
 <img width="1064" alt="Screenshot 2023-09-18 at 08 04 04" src="https://github.com/charlierobin/google-mail-wrapper/assets/10506323/45321e07-7aa1-4d64-b6ad-770979604d3d">
 
 As with the Proton Mail app, there is a simple RegEx that looks at the page title and sees if there are unread emails, playing a notification sound if anything is found.
+
+The only other minor difference between the Proton Mail wrapper and this app is that I needed to add a fake `UserAgent` string to the web control, as GMail wouldn't show the modern UI without it, and kept reverting to the "basic" HTML version. So I suppose if for some reason you wanted to force the wrapper app to show only this basic GMail version you could comment this line out and re-build:
+
+`self.Web.UserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6.1 Safari/605.1.15"`
+
+(I just copied and pasted the user agent string from a random version of Safari, and it seems to work okay.)
 
